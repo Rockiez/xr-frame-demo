@@ -1,0 +1,13 @@
+<view class="demo-wrap"       
+>
+  <view class="demo-viewer" >
+    <block >
+      <slot>
+      </slot>
+    </block>
+  </view>
+
+  <view class="cp-area">
+		<image bindtap="handleShare" mode="aspectFit" src="/assets/image/capture.png" />
+  </view>
+</view>

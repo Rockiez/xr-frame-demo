@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "xr-viewer": "../../../components/xr-viewer/index",
+    "xr-classic-portal": "../../../components/xr-classic-portal/index"
+  },
+  "disableScroll": true
+}

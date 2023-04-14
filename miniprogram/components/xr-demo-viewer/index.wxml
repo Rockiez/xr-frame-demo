@@ -5,7 +5,8 @@
     </block>
     <view class="intro">
       <view class="intro-detail">
-        <view class="intro-title" ><text>{{title}}</text> <button class="share" open-type="share">分享给好友</button></view>
+        <view class="intro-title" ><text>{{title}}</text> 
+        <button class="share" open-type="share">分享给好友</button></view>
         <view class="description" >{{intro}}</view>
       </view>
     </view>

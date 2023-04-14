@@ -1,0 +1,25 @@
+<xr-viewer
+title="人脸识别"
+>
+  <xr-ar-face
+    disable-scroll
+    id="main-frame"
+    width="{{renderWidth}}"
+    height="{{renderHeight}}"
+    style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"
+    bind:arTrackerState="handleARTrackerState"
+    bindassetsProgress="handleProgress"
+    bindassetsLoaded="handleLoaded"
+  />
+
+  <view wx:if="{{arTrackerShow}}" style="text-align: center;padding: 12px;">
+    <view>Tracker识别状态：{{arTrackerState}}</view>
+    <view>错误信息：{{arTrackerError}}</view>
+  </view>
+
+</xr-viewer>
+
+<view wx:if="{{!loaded}}"   
+    style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: {{width}}px; height: {{height}}px;background-color: #6aa; text-align: center;line-height: 24px;">
+    <text style="color: red;font-size: 18px;">{{progressInfo}}</text>
+</view>

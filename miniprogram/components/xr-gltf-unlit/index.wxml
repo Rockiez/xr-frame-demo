@@ -6,7 +6,7 @@
     <xr-node node-id="camera-target" position="0 0 0"></xr-node>
     <xr-gltf node-id="gltf-just_a_girl" position="0 -0.5 0" rotation="0 0 0" scale="0.01 0.01 0.01" model="gltf-just_a_girl"></xr-gltf>
     <xr-camera
-      id="camera" node-id="camera" position="0 0.4 1.6" clear-color="0.9 0.9 0.9 1"
+      id="camera" node-id="camera" position="0 0.4 1.6" clear-color="1 0.67843 0.67843 1"
       target="camera-target"
       camera-orbit-control=""
     ></xr-camera>

@@ -1,19 +1,30 @@
 
-<scroll-view class="main" scroll-y="{{true}}">
+<view class="main">
   <view class="slogen-wrap" bind:tap="handleLastRecord">
-    <view class="slogen">XR<view class="special">Frame</view></view>
+    <view class="slogen">AR <view class="special"> Wedding</view></view>
     <view class="intro">
-      小程序低成本高性能XR解决方案
+      爱与未来，照进现实
     </view>
   </view>
+  
+  <xr-gltf-unlit
+    disable-scroll
+    id="main-frame"
+    width="{{renderWidth}}"
+    height="{{renderHeight}}"
+    style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"
+    a="123"
+  />
 
-  <pull-down-list
+<scroll-view class="list">
+  <list 
     wx:for="{{list}}"
     name="{{item.name}}"
-    tag="{{item.tag}}"
     root="{{root}}"
+    path="{{item.path}}"
     wx:key="name"
-    childArr="{{item.childArr}}"
     bind:click="clickHandle"
   />
-</scroll-view>
+
+  </scroll-view>
+</view>

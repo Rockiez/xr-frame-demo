@@ -19,12 +19,16 @@ Component({
     },
     handleAssetsProgress: function ({detail}) {
       console.log('assets progress', detail.value);
+      this.triggerEvent('assetsProgress', detail.value);
+
     },
     handleAssetsLoaded: function ({detail}) {
       console.log('assets loaded', detail.value);
       this.setData({loaded: true});
       this.scene.event.addOnce('touchstart', this.placeNode.bind(this));
-      wx.showToast({title: '点击屏幕放置'});
+      wx.showToast({title: '点击屏幕放置模型'});
+      this.triggerEvent('assetsLoaded', detail.value);
+
     },
     handleTick() {
       if (!this.placed) {

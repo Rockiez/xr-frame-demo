@@ -8,6 +8,9 @@
   "compileType": "miniprogram",
   "projectname": "xr-frame-demo",
   "setting": {
+    "useCompilerPlugins": [
+      "typescript"
+    ],
     "urlCheck": true,
     "es6": true,
     "enhance": true,
@@ -43,9 +46,6 @@
     "disableUseStrict": false,
     "minifyWXML": true,
     "showES6CompileOption": false,
-    "useCompilerPlugins": [
-      "typescript"
-    ],
     "ignoreDevUnusedFiles": false,
     "ignoreUploadUnusedFiles": false,
     "useStaticServer": true,
@@ -53,9 +53,9 @@
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "appid": "wx9600d039dad73317",
+  "appid": "wxbf1775b27217e0f3",
   "condition": {},
-  "libVersion": "2.24.3",
+  "libVersion": "2.30.4",
   "srcMiniprogramRoot": "miniprogram/",
   "editorSetting": {
     "tabIndent": "insertSpaces",

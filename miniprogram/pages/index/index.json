@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "pull-down-list": "../../components/pull-down-list/index"
+    "list": "../../components/list/index",
+    "xr-gltf-unlit": "../../components/xr-gltf-unlit/index"
+
   },
   "disableScroll": true,
   "navigationStyle": "custom"

@@ -1,4 +1,4 @@
-
+/* 
 .main {
   position: absolute;
   left: 0;
@@ -10,18 +10,29 @@
   padding-right: 32rpx;
   padding-top: 48rpx;
   padding-bottom: 80rpx;
+  background-color: #FFADAD;
+} */
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  box-sizing: content-box;
+  padding-top: 100rpx;
+  padding-bottom: 80rpx;
+  background-color: #FFADAD;
 }
 .slogen-wrap {
-  padding-top: 100rpx;
-  padding-left: 16rpx;
+  padding-top: 50rpx;
+  padding-left: 80rpx;
   padding-right: 16rpx;
   margin-bottom: 48rpx;
 }
 .slogen {
   text-align: left;
-  font-size: 70rpx;
+  font-size: 80rpx;
   font-weight: bold;
-  color: rgb(115, 239, 43);
+  color: #eeeeee;
   line-height: 80rpx;
 }
 .slogen .special {
@@ -43,4 +54,25 @@
   margin: 20rpx 0;
   padding: 30rpx;
   border-radius: 5px;
+}
+
+/* .list {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: block;
+} */
+
+.list {
+  align-self: flex-end;
+  flex: 2;
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+  height: 600rpx;
+  width: 100%;
+}
+
+#main-frame {
+  margin-left: auto;
+  margin-right: auto;
 }

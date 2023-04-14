@@ -22,8 +22,7 @@
     ]
   },
   "include": [
-    "./**/*.ts"
-, "miniprogram/components/common/share-behavior.js"  ],
+    "./**/*.ts", "miniprogram/pages/wedding-ar/ar-face/ar-face.js", "miniprogram/pages/wedding-ar/ar-2dmarker/ar-2dmarker.js", "miniprogram/pages/wedding-ar/ar-plane/ar-plane.js" ],
   "exclude": [
     "node_modules"
   ]

@@ -10,7 +10,7 @@ module.exports = Behavior({
     renderWidth: 0,
     renderHeight: 0,
     windowHeight: 1000,
-    heightScale: 0.75,
+    heightScale: 1,
     showBackBtn: false,
     activeValues: [1],
     arTrackerShow: false,

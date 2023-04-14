@@ -1,5 +1,6 @@
 <xr-scene ar-system="modes:Body" bind:ready="handleReady" bind:ar-ready="handleARReady">
   <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
+      <xr-asset-load type="gltf" asset-id="gltf-just_a_girl" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/just_a_girl/index.glb" />
   </xr-assets>
   <xr-node wx:if="{{arReady}}">
     <xr-ar-tracker id='tracker' mode="Body" auto-sync="-1 0 5 6 17 18 11 12 13 14 15 16">

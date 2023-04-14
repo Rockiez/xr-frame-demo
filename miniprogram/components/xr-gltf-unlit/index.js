@@ -18,9 +18,21 @@ Component({
     handleAssetsLoaded: function({detail}) {
       console.log('assets loaded', detail.value);
       this.setData({loaded: true});
+      this.init();
+      this.cameraCtrl.isLockZoom = true;
+      this.cameraCtrl.isLockY = true;
     },
     handleRaf: function({detail}) {
       console.log('raf', detail.value);
-    }
-  }
+    },
+    init: function() {
+      if (!this.camera) {
+        const camEl = this.scene.getElementById('camera');
+        this.camera = camEl.getComponent(wx.getXrFrameSystem().Camera);
+        this.cameraCtrl = camEl.getComponent('camera-orbit-control');
+
+
+      }
+  }}
+
 })
