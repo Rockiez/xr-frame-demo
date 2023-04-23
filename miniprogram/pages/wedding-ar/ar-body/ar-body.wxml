@@ -8,6 +8,7 @@ title="穿戴模型"
     height="{{renderHeight}}"
     style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"
     bind:info="handleInfo"
+    markerListRaw="{{markerList}}"
     bind:arTrackerState="handleARTrackerState"
     bindassetsProgress="handleProgress"
     bindassetsLoaded="handleLoaded"
@@ -20,7 +21,21 @@ title="穿戴模型"
   </view>
 </xr-viewer>
 
-  <view wx:if="{{!loaded}}"   
-    style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: {{width}}px; height: {{height}}px;background-color: #6aa; text-align: center;line-height: 24px;">
-    <text style="color: red;font-size: 18px;">{{progressInfo}}</text>
+  <!-- 角色 -->
+  <view class="xr-control" style="top: {{height - 130}}px;">
+    <view class="control-item {{char1 ? 'active' : ''}}" bind:tap="tapChar1">
+      <view class="img-wrap">
+        <image class="hint-img" src="/assets/image/garen_img.jpg" />
+      </view>
+    </view>
+    <view class="control-item {{char2 ? 'active' : ''}}" bind:tap="tapChar2">
+      <view class="img-wrap">
+        <image class="hint-img" src="/assets/image/ashe_img.jpg" />
+      </view>
+    </view>
   </view>
+
+  <view wx:if="{{!loaded}}"   
+    style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: {{width}}px; height: {{height}}px;background-color: #ffdede; text-align: center;line-height: 24px;">
+    <image mode="aspectFit" style="width: 1000rpx" src="/assets/image/loading.gif" />
+      </view>

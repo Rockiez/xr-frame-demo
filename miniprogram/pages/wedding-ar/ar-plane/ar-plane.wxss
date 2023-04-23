@@ -1,1 +1,50 @@
-/* pages/wedding-ar/ar-plane/ar-plane.wxss */
+
+.xr-control {
+  position: absolute;
+  left: 50%;
+  width: 720rpx;
+  height: 200rpx;
+  margin-left: -360rpx;
+  margin-top: -220rpx;
+  text-align: center;
+}
+
+.control-item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 160rpx;
+  margin: 0 10rpx;
+  height: 100%;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.control-item.active .img-wrap {
+
+  border: 4rpx solid #FFADAD;
+}
+
+.img-wrap {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin: 10rpx 5rpx;
+  overflow: hidden;
+  border: 4rpx solid #fff;
+}
+
+.hint-img {
+  width: 100%;
+  height: 100%;
+}
+
+.hint-img.lh {
+  height: 110%;
+  padding-top: -5%;
+}
+
+.hint-img.lw {
+  width: 130%;
+  margin-left: -15%;
+}

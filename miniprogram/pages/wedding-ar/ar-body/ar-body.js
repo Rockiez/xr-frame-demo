@@ -8,6 +8,9 @@ Page({
     score: undefined,
     progressInfo: '',
     loaded: false,
+    char1: true,
+    char2: false,
+    markerList: [],
   },
   handleInfo: function({detail}) {
     this.setData({score: detail.score.toFixed(2)});
@@ -19,5 +22,44 @@ Page({
   handleLoaded: function({detail}) {
     console.log('assets loaded at page', detail);
     this.setData({loaded: true});
-  }
+  },  refreshData() {
+    const markerList = [];
+    if (this.data.char1) {
+      markerList.push({
+        name: 'char1',
+      });
+    }
+
+    if (this.data.char2) {
+      markerList.push({
+        name: 'char2',
+      });
+    }
+    this.setData({
+      dataReady: true,
+      markerList: markerList
+    });
+
+    this.setData({
+      debugMsg: 'markerList:' + markerList.length
+    })
+  },
+
+  tapChar1() {
+    this.setData({
+      char1: true,
+      char2: false,
+    });
+
+    this.refreshData();
+  },
+  tapChar2() {
+    this.setData({
+      char1: false,
+      char2: true,
+    });
+
+    this.refreshData();
+  },
+
 });

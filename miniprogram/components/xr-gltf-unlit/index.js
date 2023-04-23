@@ -14,6 +14,8 @@ Component({
     },
     handleAssetsProgress: function({detail}) {
       console.log('assets progress', detail.value);
+      this.triggerEvent('assetsProgress', detail.value);
+
     },
     handleAssetsLoaded: function({detail}) {
       console.log('assets loaded', detail.value);
@@ -21,6 +23,8 @@ Component({
       this.init();
       this.cameraCtrl.isLockZoom = true;
       this.cameraCtrl.isLockY = true;
+      this.triggerEvent('assetsLoaded', detail.value);
+
     },
     handleRaf: function({detail}) {
       console.log('raf', detail.value);

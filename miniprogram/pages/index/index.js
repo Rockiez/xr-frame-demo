@@ -17,18 +17,26 @@ Page({
     renderWidth: 300, renderHeight: 300,
     texts: [],
     list,
-    root: ''
+    root: '',
+    progressInfo: '',
+    loaded: false,
+    
   },
   onLoad() {
     const info = wx.getSystemInfoSync();
-    // const width = info.windowWidth * 0.7;
+    const lwidth = info.windowWidth;
+    const lheight = info.windowHeight;
     const width = Math.min(info.windowWidth * 0.7, info.windowHeight * 0.35);
     const height = width;
     const dpi = info.pixelRatio;
     this.setData({
       width, height,
       renderWidth: width * dpi,
-      renderHeight: height * dpi
+      renderHeight: height * dpi,
+
+      lwidth, lheight,
+      lrenderWidth: lwidth * dpi,
+      lrenderHeight: lheight * dpi
     });
 
     if (first) {
@@ -66,5 +74,13 @@ Page({
         },
       });
     }
-  }
+  },
+  handleProgress: function({detail}) {
+    console.log('assets progress', detail);
+    this.setData({progressInfo: `${~~(detail.progress * 100)} %\n\n${detail.asset.assetId}(${detail.asset.type}): ${detail.asset.src}`});
+  },
+  handleLoaded: function({detail}) {
+    console.log('assets loaded at page', detail);
+    this.setData({loaded: true});
+  },
 });

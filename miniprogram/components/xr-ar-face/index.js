@@ -1,14 +1,53 @@
 Component({
   behaviors: [require('../common/share-behavior').default],
+  properties: {
+    markerListRaw: {
+      type: Array,
+      value: []
+    },
+  },
   data: {
     loaded: false,
     arReady: false,
+    char1: true,
+    char2: false,
+  },  
+  observers: {
+    markerListRaw(newVal) {
+      this.setData({
+        markerList: newVal,
+      })
+      this.handleTrackerSwitch();
+    },
   },
   methods: {
+
     handleReady({detail}) {
       const xrScene = this.scene = detail.value;
       xrScene.event.add('tick', this.handleTick.bind(this));
       console.log('xr-scene', xrScene);
+
+      this.handleTrackerSwitch();
+
+    },
+
+    handleTrackerSwitch() {
+      const markerList = this.data.markerList;
+
+      for(let i = 0; i < markerList.length; i++) {
+        const marker = markerList[i];
+        switch (marker.name) {
+          case 'char1':
+            this.setData({char1: true});
+            this.setData({char2: false});
+            break;
+          case 'char2':
+            this.setData({char1: false});
+            this.setData({char2: true});
+          break;
+        }
+      }
+      console.log("markerList" , markerList);
     },
     handleAssetsProgress: function ({detail}) {
       console.log('assets progress', detail.value);
@@ -44,5 +83,7 @@ Component({
       // 为`false`为世界空间的位置，需要配合`scale`自己使用
       const position = tracker.getPosition(98, new xrSystem.Vector3(), false);
     }
+
+
   }
 })

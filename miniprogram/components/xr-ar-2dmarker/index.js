@@ -2,7 +2,7 @@ Component({
   behaviors: [require('../common/share-behavior').default],
   properties: {
     markerImg: {
-      type: String
+      type: '',
     },
   },
   data: {
@@ -20,6 +20,10 @@ Component({
     }) {
       const xrScene = this.scene = detail.value;
       console.log('xr-scene', xrScene);
+      console.log('arReady');
+      this.setData({
+        arReady: true
+      })
     },
     handleAssetsProgress: function ({
       detail
@@ -36,8 +40,6 @@ Component({
         loaded: true
       });
       this.triggerEvent('assetsLoaded', detail.value);
-
-      
     },
     handleARReady: function ({
       detail
