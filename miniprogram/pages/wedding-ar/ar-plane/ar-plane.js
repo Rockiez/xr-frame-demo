@@ -7,7 +7,7 @@ Page({
     xmlCode: '<div class="codeWrap">' + handleDecodedXML(xmlCode) + '</div>',
     progressInfo: '',
     loaded: false,
-    char1: true,
+    char1: false,
     char2: false,
     char3: false,
     markerList: [],
