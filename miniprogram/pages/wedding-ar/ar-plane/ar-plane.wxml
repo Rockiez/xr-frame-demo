@@ -34,6 +34,11 @@
       <image class="hint-img" src="/assets/image/aso_img.jpg" />
     </view>
   </view>
+    <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar4">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/robot_img.jpg" />
+    </view>
+  </view>
 </view>
 
 <view class="cleanButton">

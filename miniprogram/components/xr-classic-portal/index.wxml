@@ -3,9 +3,12 @@
   <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
     <xr-asset-load type="gltf" asset-id="anchor" src="/assets/gltf/anchor.glb" /> 
 
+    <xr-asset-load type="gltf" asset-id="marker" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/exclamation_mark.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713599503&Signature=8d2XxZvgaB79%2Bnz8uZLO69/cqcI%3D" />
+
     <xr-asset-load type="gltf" asset-id="char1" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/monkey.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713419021&Signature=YwFCpUypJeHLDlX/bLnzCvCpTYo%3D" />
     <xr-asset-load type="gltf" asset-id="char2" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/lux.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713337124&Signature=XnYPAGUXaGL%2Bx/Y%2BnNp11uBOk88%3D" />
     <xr-asset-load type="gltf" asset-id="char3" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/Yasuo.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713418910&Signature=%2BG4XWwjhENaFxY6yxJJHwrOtqmQ%3D" />
+    <xr-asset-load type="gltf" asset-id="char4" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/robot.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713601265&Signature=RBIpY2CNW9nMVO4kk8NDrV2m8D0%3D" />
 
   </xr-assets>
 
@@ -26,8 +29,12 @@
 
     <xr-node id="char3" node-id="char3" visible="false">
       <xr-gltf wx:if="{{char3}}" model="char3" scale="8 8 8 " anim-autoplay mesh-shape="autoFit:true" position="0 0 0" bind:touch-shape="handleTouchModel"/>
+      <xr-gltf wx:if="{{char3}}" model="marker" scale="10 10 10 " position="0.15 1.5 0.1"/>
     </xr-node>
-    
+
+    <xr-node id="char4" node-id="char4" visible="false">
+      <xr-gltf wx:if="{{char4}}" model="char4" scale="8 8 8" anim-autoplay  position="0 0 0"/>
+    </xr-node>
   </xr-node>
 
   <xr-camera

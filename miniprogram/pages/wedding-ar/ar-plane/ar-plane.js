@@ -13,6 +13,7 @@ Page({
     char1: false,
     char2: false,
     char3: false,
+    char4: false,
     clean: false,
     pending: false,
     awardDialog:false,
@@ -55,7 +56,11 @@ Page({
         name: 'char3',
       });
     }
-    
+    if (this.data.char4) {
+      markerList.push({
+        name: 'char4',
+      });
+    }
     this.setData({
       dataReady: true,
       markerList: markerList
@@ -74,6 +79,7 @@ Page({
       char1: true,
       char2: false,
       char3: false,
+      char4: false,
     });
 
     this.refreshData();
@@ -85,7 +91,9 @@ Page({
     this.setData({
       char1: false,
       char2: true,
-      char3: false,    
+      char3: false,
+      char4: false,
+    
     });
 
     this.refreshData();
@@ -98,11 +106,24 @@ Page({
       char1: false,
       char2: false,
       char3: true,
+      char4: false,
     });
 
     this.refreshData();
   },
+  tapChar4() {
+    if (this.data.pending) {
+      return;
+    }
+    this.setData({
+      char1: false,
+      char2: false,
+      char3: false,
+      char4: true,
+    });
 
+    this.refreshData();
+  },
   tapClean() {
     if (this.data.pending) {
       return;

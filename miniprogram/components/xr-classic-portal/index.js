@@ -27,6 +27,7 @@ Component({
     char1: false,
     char2: false,
     char3: false,
+    char4: false,
     anchor: false,
     pending: false,
     questionsPending: false,
@@ -65,6 +66,9 @@ Component({
           case 'char3':
             this.handleChar3Tick();
             break;
+          case 'char4':
+              this.handleChar4Tick();
+              break;
           case 'clean':
             this.handleCleanAll();
         }
@@ -109,7 +113,15 @@ Component({
       this.scene.event.addOnce('touchstart', this.placeChar3Node.bind(this));
       wx.showToast({title: '点击屏幕放置模型', icon: 'none'});
     },
+    handleChar4Tick: function () {
+      if (this.data.pending) return;
+      this.setData({pending: true});
+      this.triggerEvent('pendingStateSwitch', this.data.pending);
 
+      this.setData({anchor: true});
+      this.scene.event.addOnce('touchstart', this.placeChar4Node.bind(this));
+      wx.showToast({title: '点击屏幕放置模型', icon: 'none'});
+    },
     placeChar1Node(event) {
 
       const {clientX, clientY} = event.touches[0];
@@ -165,7 +177,23 @@ Component({
         wx.setKeepScreenOn({keepScreenOn: true});
       }
     },
+    placeChar4Node(event) {
+      const {clientX, clientY} = event.touches[0];
+      const {frameWidth: width, frameHeight: height} = this.scene;
 
+      if (clientY / height > 0.7) {
+        this.scene.ar.resetPlane();
+        this.scene.event.addOnce('touchstart', this.placeChar4Node.bind(this));
+      } else {
+        this.scene.ar.placeHere('char4', true);
+        
+        this.setData({anchor: false});
+        this.setData({char4: true});        
+        this.setData({pending: false});
+        this.triggerEvent('pendingStateSwitch', this.data.pending);
+        wx.setKeepScreenOn({keepScreenOn: true});
+      }
+    },
     handleTouchModel: function (event) {
       const {value, el} = event.detail;
       
@@ -186,6 +214,8 @@ Component({
       this.setData({char1: false});
       this.setData({char2: false});
       this.setData({char3: false});
+      this.setData({char4: false});
+
     }
   }
 })
