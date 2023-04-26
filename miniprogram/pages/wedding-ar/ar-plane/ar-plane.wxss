@@ -19,9 +19,11 @@
   text-align: center;
 }
 
-.control-item.active .img-wrap {
-
+.control-item:active .img-wrap {
   border: 4rpx solid #FFADAD;
+}
+.control-item.active .hint-img {
+  filter: brightness(50%);
 }
 
 .img-wrap {
@@ -48,3 +50,135 @@
   width: 130%;
   margin-left: -15%;
 }
+
+.dialog {
+  display: flex;
+  position: absolute; 
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.award{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;  
+  position: absolute; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.awardImg{
+  height: 60%;
+  width: 85%;
+}
+.cancel{
+  
+  height: 80rpx;
+  justify-self: flex-start;
+  margin-top: 20rpx;
+}
+.questionBox {
+  display: flex;
+  width: 80%;
+  height: 160rpx;
+  box-sizing: border-box;
+  background-color: #ffff;
+  border-radius: 60rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  margin-bottom: 24rpx;
+  padding: 0 32rpx;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #333;
+  overflow: visible;
+}
+
+.questionBox .questionContext {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  width: 90%;
+}
+
+.options {
+  display: flex;
+  width: 100%;
+  height: 120rpx;
+  margin-top: 50rpx;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #333;
+  overflow: visible;
+}
+
+.options .optionBox{
+  display: flex;
+  width: 40%;
+  height: 100rpx;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 60rpx;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 32rpx;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  align-self: center;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #fff;
+  overflow: visible;
+  border: 4rpx solid #fff;
+}
+
+.optionImg {
+  display: flex;
+  height: 50%;
+  width: 25%;
+  align-self: first;
+}
+
+.options .optionBox .optionContext {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  width: 90%;
+}
+
+.cleanButton{
+  position: absolute;
+  height: 60rpx;
+  width: 60rpx;
+  right: 100rpx;
+  bottom: 160rpx;
+  margin: 20rpx;
+  padding: 10rpx;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.cleanImg{
+  height: 100%;
+  width: 100%;
+}
+

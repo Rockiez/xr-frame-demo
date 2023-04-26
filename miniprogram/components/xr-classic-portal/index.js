@@ -5,6 +5,21 @@ Component({
       type: Array,
       value: []
     },
+    questionsPending: {
+      type: Boolean,
+      value: false,
+      observer: function(newval, oldval){
+        this.setData({questionsPending: newval})
+      }
+    },
+    placePending: {
+      type: Boolean,
+      value: false,
+      observer: function(newval, oldval){
+        this.setData({pending: newval})
+      }
+    }
+
   },
   data: {
     loaded: false,
@@ -14,12 +29,13 @@ Component({
     char3: false,
     anchor: false,
     pending: false,
+    questionsPending: false,
   },
   lifetimes: {
     detached() {
       wx.setKeepScreenOn({keepScreenOn: false});
     }
-  },  
+  }, 
   observers: {
     markerListRaw(newVal) {
       this.setData({
@@ -49,6 +65,8 @@ Component({
           case 'char3':
             this.handleChar3Tick();
             break;
+          case 'clean':
+            this.handleCleanAll();
         }
       }
       console.log("markerList" , markerList);
@@ -67,6 +85,8 @@ Component({
     handleChar1Tick: function () {
       if (this.data.pending) return;
       this.setData({pending: true});
+      this.triggerEvent('pendingStateSwitch', this.data.pending);
+
       this.setData({anchor: true});
       this.scene.event.addOnce('touchstart', this.placeChar1Node.bind(this));
       wx.showToast({title: '点击屏幕放置模型', icon: 'none'});
@@ -74,6 +94,8 @@ Component({
     handleChar2Tick: function () {
       if (this.data.pending) return;
       this.setData({pending: true});
+      this.triggerEvent('pendingStateSwitch', this.data.pending);
+
       this.setData({anchor: true});
       this.scene.event.addOnce('touchstart', this.placeChar2Node.bind(this));
       wx.showToast({title: '点击屏幕放置模型', icon: 'none'});
@@ -81,6 +103,8 @@ Component({
     handleChar3Tick: function () {
       if (this.data.pending) return;
       this.setData({pending: true});
+      this.triggerEvent('pendingStateSwitch', this.data.pending);
+
       this.setData({anchor: true});
       this.scene.event.addOnce('touchstart', this.placeChar3Node.bind(this));
       wx.showToast({title: '点击屏幕放置模型', icon: 'none'});
@@ -91,7 +115,7 @@ Component({
       const {clientX, clientY} = event.touches[0];
       const {frameWidth: width, frameHeight: height} = this.scene;
 
-      if (clientY / height > 0.5 && clientX / width > 0.8) {
+      if (clientY / height > 0.7) {
         this.scene.ar.resetPlane();
         this.scene.event.addOnce('touchstart', this.placeChar1Node.bind(this));
       } else {
@@ -99,6 +123,7 @@ Component({
         this.setData({anchor: false});
         this.setData({char1: true});
         this.setData({pending: false});
+        this.triggerEvent('pendingStateSwitch', this.data.pending);
         wx.setKeepScreenOn({keepScreenOn: true});
       }
     },
@@ -108,7 +133,7 @@ Component({
       const {clientX, clientY} = event.touches[0];
       const {frameWidth: width, frameHeight: height} = this.scene;
 
-      if (clientY / height > 0.5 && clientX / width > 0.8) {
+      if (clientY / height > 0.7) {
         this.scene.ar.resetPlane();
         this.scene.event.addOnce('touchstart', this.placeChar2Node.bind(this));
       } else {
@@ -116,6 +141,8 @@ Component({
         this.setData({anchor: false});
         this.setData({char2: true});
         this.setData({pending: false});
+        this.triggerEvent('pendingStateSwitch', this.data.pending);
+
         wx.setKeepScreenOn({keepScreenOn: true});
       }
     },
@@ -125,7 +152,7 @@ Component({
       const {clientX, clientY} = event.touches[0];
       const {frameWidth: width, frameHeight: height} = this.scene;
 
-      if (clientY / height > 0.5 && clientX / width > 0.8) {
+      if (clientY / height > 0.7) {
         this.scene.ar.resetPlane();
         this.scene.event.addOnce('touchstart', this.placeChar3Node.bind(this));
       } else {
@@ -134,20 +161,31 @@ Component({
         this.setData({anchor: false});
         this.setData({char3: true});        
         this.setData({pending: false});
+        this.triggerEvent('pendingStateSwitch', this.data.pending);
         wx.setKeepScreenOn({keepScreenOn: true});
       }
     },
 
-    handleTouchModel: function ({detail}) {
-
-      if (this.data.pending) {
+    handleTouchModel: function (event) {
+      const {value, el} = event.detail;
+      
+      console.log(this.scene.canvas);
+      // if (value.y / this.scene.frameHeight > 2) {
+      //   return;
+      // }
+      if (this.data.pending || this.data.questionsPending) {
         return;
       }
 
-      const {target} = detail.value;
-      const id = target.id;
-      
-      wx.showToast({title: `点击了模型： ${id}`, icon: 'none'});
+      this.triggerEvent('touchModel', event.detail.value);
     },
+
+    handleCleanAll: function () {
+      if (this.data.pending|| this.data.questionsPending) return;
+      this.scene.ar.resetPlane();
+      this.setData({char1: false});
+      this.setData({char2: false});
+      this.setData({char3: false});
+    }
   }
 })

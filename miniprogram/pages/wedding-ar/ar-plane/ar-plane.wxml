@@ -3,37 +3,69 @@
     disable-scroll
     id="main-frame"
     markerListRaw ="{{markerList}}"
+    questionsPending="{{questionsStart}}"
+    placePending="{{pending}}"
     width="{{renderWidth}}"
     height="{{renderHeight}}"
     style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"
 
     bindassetsProgress="handleProgress"
     bindassetsLoaded="handleLoaded"
+    bindquestionsStart="handleQuestionsStart"
+    bindtouchModel="handleTouchModel"
+    bindpendingStateSwitch="handlePendingStateSwitch"
   />
-
-  <view wx:if="{{arTrackerShow}}" style="text-align: center;padding: 12px;">
-    <view>Tracker识别状态：{{arTrackerState}}</view>
-    <view>错误信息：{{arTrackerError}}</view>
-  </view>
 
 </xr-viewer>
 
 <view class="xr-control" style="top: {{height - 130}}px;">
-  <view class="control-item {{char1 ? 'active' : ''}}" bind:tap="tapChar1">
-    <view class="img-wrap">
-      <image class="hint-img" src="/assets/image/aso_img.jpg" />
-    </view>
-  </view>
-  <view class="control-item {{char2 ? 'active' : ''}}" bind:tap="tapChar2">
-    <view class="img-wrap">
-      <image class="hint-img" src="/assets/image/lux_img.jpg" />
-    </view>
-  </view>
-  <view class="control-item {{char3 ? 'active' : ''}}" bind:tap="tapChar3">
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar1">
     <view class="img-wrap">
       <image class="hint-img" src="/assets/image/monkey_img.jpg" />
     </view>
   </view>
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar2">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/lux_img.jpg" />
+    </view>
+  </view>
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar3">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/aso_img.jpg" />
+    </view>
+  </view>
+</view>
+
+<view class="cleanButton">
+  
+</view>
+
+<view class="dialog" wx:if="{{questionsStart}}" bind:tap="tapQuestionBox">
+  <view  class="questionBox" bind:tap="tapQuestionBox">
+    <view class="questionContext">{{ currentQuestionContext }}</view>
+  </view>
+  <view class="options" wx:if="{{optionsExist}}">
+    <view class="optionBox" bind:tap="tapOptionABox">
+      <image mode="aspectFit" src="/assets/image/option_img.png" class="optionImg"/>
+      <view class="optionContext">{{ optionAContext }}</view>
+    </view>  
+    <view class="optionBox" bind:tap="tapOptionBBox">
+            <image mode="aspectFit" src="/assets/image/option_img.png" class="optionImg"/>
+      <view class="optionContext">{{ optionBContext }}</view>
+    </view>
+  </view>
+</view>
+
+<view class="award" wx:if="{{awardDialog}}"  >
+  
+  <image class="awardImg" wx:if="{{questionWrongFlag}}" bindtap="tapAwardDialogClose" mode="aspectFit"  src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/defeat.png?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713499242&Signature=pdVc5sojmrN81%2BwJKSxlkiWxksw%3D"/>
+
+  <image class="awardImg" wx:if="{{!questionWrongFlag}}" mode="aspectFit" bindlongpress="saveImage" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/award.png?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713493148&Signature=WPU6aqM60lfO2orFIE5eR%2BwgPNg%3D"/>
+  <image class="cancel" mode="aspectFit" bindtap="tapAwardDialogClose" src="/assets/image/cancel.png"/>
+</view>
+
+<view class="cleanButton" wx:if="{{!pending && !questionsStart}}" bind:tap="tapClean">
+  <image mode="aspectFit" src="/assets/image/clean.png" class="cleanImg"/>
 </view>
 
 <view wx:if="{{!loaded}}"   

@@ -11,6 +11,7 @@ Component({
     arReady: false,
     char1: true,
     char2: false,
+    char3: false,
   },  
   observers: {
     markerListRaw(newVal) {
@@ -39,10 +40,17 @@ Component({
           case 'char1':
             this.setData({char1: true});
             this.setData({char2: false});
+            this.setData({char3: false});
             break;
           case 'char2':
             this.setData({char1: false});
             this.setData({char2: true});
+            this.setData({char3: false});
+          break;
+          case 'char3':
+            this.setData({char1: false});
+            this.setData({char2: false});
+            this.setData({char3: true});
           break;
         }
       }

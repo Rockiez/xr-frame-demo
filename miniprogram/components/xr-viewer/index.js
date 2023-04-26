@@ -30,7 +30,5 @@ Component({
     handleShare: function() {      
       wx.xrScene.share.captureToFriends();
     },
-
-
   }
 })

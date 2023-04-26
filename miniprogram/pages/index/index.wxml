@@ -35,3 +35,4 @@
     <!-- <text style="color: red;font-size: 18px;">{{progressInfo}}</text> -->
     <image mode="aspectFit" style="width: 1000rpx" src="/assets/image/loading.gif" />
   </view>
+

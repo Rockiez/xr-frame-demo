@@ -10,6 +10,7 @@ Page({
     loaded: false,
     char1: true,
     char2: false,
+    char3: false,
     markerList: [],
   },
   handleInfo: function({detail}) {
@@ -35,6 +36,11 @@ Page({
         name: 'char2',
       });
     }
+    if (this.data.char3) {
+      markerList.push({
+        name: 'char3',
+      });
+    }
     this.setData({
       dataReady: true,
       markerList: markerList
@@ -49,6 +55,7 @@ Page({
     this.setData({
       char1: true,
       char2: false,
+      char3: false,
     });
 
     this.refreshData();
@@ -57,9 +64,18 @@ Page({
     this.setData({
       char1: false,
       char2: true,
+      char3: false,
     });
 
     this.refreshData();
   },
+  tapChar3() {
+    this.setData({
+      char1: false,
+      char2: false,
+      char3: true,
+    });
 
+    this.refreshData();
+  },
 });

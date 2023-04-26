@@ -30,7 +30,12 @@ title="穿戴模型"
     </view>
     <view class="control-item {{char2 ? 'active' : ''}}" bind:tap="tapChar2">
       <view class="img-wrap">
-        <image class="hint-img" src="/assets/image/ashe_img.jpg" />
+        <image class="hint-img" src="/assets/image/ezreal_img.jpg" />
+      </view>
+    </view>
+    <view class="control-item {{char3 ? 'active' : ''}}" bind:tap="tapChar3">
+      <view class="img-wrap">
+        <image class="hint-img" src="/assets/image/lux_img.jpg" />
       </view>
     </view>
   </view>

@@ -3,9 +3,9 @@
   <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
     <xr-asset-load type="gltf" asset-id="anchor" src="/assets/gltf/anchor.glb" /> 
 
-    <xr-asset-load type="gltf" asset-id="char1" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/jinx.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1712884378&Signature=WLbo0c9stwygK/hCkSALMzoXbY8%3D" />
+    <xr-asset-load type="gltf" asset-id="char1" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/monkey.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713419021&Signature=YwFCpUypJeHLDlX/bLnzCvCpTYo%3D" />
     <xr-asset-load type="gltf" asset-id="char2" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/lux.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713337124&Signature=XnYPAGUXaGL%2Bx/Y%2BnNp11uBOk88%3D" />
-    <xr-asset-load type="gltf" asset-id="char3" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/ship_in_clouds/scene.gltf" />
+    <xr-asset-load type="gltf" asset-id="char3" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/Yasuo.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713418910&Signature=%2BG4XWwjhENaFxY6yxJJHwrOtqmQ%3D" />
 
   </xr-assets>
 
@@ -17,15 +17,15 @@
     </xr-ar-tracker>
 
     <xr-node id="char1" node-id="char1" visible="false">
-      <xr-gltf wx:if="{{char1}}" model="char1" scale="0.5 0.5 0.5 " anim-autoplay cube-shape="autoFit:true" shape-gizmo  position="0 0 0"  bind:touch-shape="handleTouchModel"/>
+      <xr-gltf wx:if="{{char1}}" model="char1" scale="6 6 6" anim-autoplay   position="0 0 0"/>
     </xr-node>
 
     <xr-node id="char2" node-id="char2" visible="false">
-      <xr-gltf wx:if="{{char2}}" model="char2" scale="5 5 5 " anim-autoplay cube-shape="autoFit:true" shape-gizmo  position="0 0 0" bind:touch-shape="handleTouchModel"/>
+      <xr-gltf wx:if="{{char2}}" model="char2" scale="8 8 8" anim-autoplay  position="0 0 0"/>
     </xr-node>
 
     <xr-node id="char3" node-id="char3" visible="false">
-      <xr-gltf wx:if="{{char3}}" model="char3"  anim-autoplay cube-shape="autoFit:true" shape-gizmo  position="0 0 0" bind:touch-shape="handleTouchModel"/>
+      <xr-gltf wx:if="{{char3}}" model="char3" scale="8 8 8 " anim-autoplay mesh-shape="autoFit:true" position="0 0 0" bind:touch-shape="handleTouchModel"/>
     </xr-node>
     
   </xr-node>

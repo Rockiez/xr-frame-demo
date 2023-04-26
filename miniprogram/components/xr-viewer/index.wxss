@@ -115,8 +115,9 @@
   height: 150rpx;
 }
 .cp-area image{
-  width: 100%;
-  height: 100%;
-  align-self: center;
+  width: 130rpx;
+  height: 130rpx;
+  display: block;
+  margin: 0 auto;
 
 }

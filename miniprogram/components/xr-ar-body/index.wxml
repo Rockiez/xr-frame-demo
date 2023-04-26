@@ -2,6 +2,11 @@
   <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
       <xr-asset-load type="gltf" asset-id="garen12" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/garen_12.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713058743&Signature=/y3c/LVLla026cEGNe8kXf5g0u0%3D" />
       <xr-asset-load type="gltf" asset-id="garen6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/garen_6.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1712973773&Signature=fh5J/IR4nMFfXQhCyrp1rm1g2Xk%3D" />
+      
+      <xr-asset-load type="gltf" asset-id="ezreal12" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/ezreal-12.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713433086&Signature=4uXQSNz0FjvW5hFjGR5DUM9E8KU%3D" />
+      <xr-asset-load type="gltf" asset-id="ezreal6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/ezreal-6.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713433104&Signature=3wU9HNGqfvKCtJMNRJnOhUUYBpY%3D" />
+
+      <xr-asset-load type="gltf" asset-id="lux6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/lux-6.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713486405&Signature=z2x7sWJFF5RKgrNwf5zmcgkO3qY%3D" />
 
 </xr-assets>
   <xr-node wx:if="{{arReady}}">
@@ -9,12 +14,14 @@
     <xr-ar-tracker  id='tracker' mode="Body" auto-sync="5 11">
        <xr-node>
           <xr-gltf wx:if="{{char1}}" model="garen6" rotation="0 0 0" scale="2.7 2.7 2.7" position="0 -0.085 0"/>
-          <xr-gltf wx:if="{{char2}}" model="garen6" rotation="0 0 0" scale="3 3 3" position="1 0 0"/>
+          <xr-gltf wx:if="{{char2}}" model="ezreal6" rotation="0 180 0" scale="1000 1000 1000" position="0.38 0 0"/>
+          <xr-gltf wx:if="{{char3}}" model="lux6" rotation="0 180 0" scale="18 18 18" position="0.38 0 0"/>
+
       </xr-node>
 
       <xr-node>
         <xr-gltf wx:if="{{char1}}" model="garen12" rotation="0 0 0" scale="2.5 2.5 2.5" position="-0.05 0 0"/>
-        <xr-gltf wx:if="{{char2}}" model="garen12" rotation="0 0 0" scale="3 3 3" position="1 0 0"/>
+        <xr-gltf wx:if="{{char2}}" model="ezreal12" rotation="0 180 0" scale="1000 1000 1000" position="0.16 0 0"/>
       </xr-node>
 
     </xr-ar-tracker>
