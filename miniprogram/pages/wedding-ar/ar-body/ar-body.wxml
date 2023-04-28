@@ -38,7 +38,23 @@ title="穿戴模型"
         <image class="hint-img" src="/assets/image/lux_img.jpg" />
       </view>
     </view>
+    <view class="control-item {{char4 ? 'active' : ''}}" bind:tap="tapChar4">
+      <view class="img-wrap">
+        <image class="hint-img" src="/assets/image/rakan_img.jpg" />
+      </view>
+    </view>
+      <view class="control-item {{char5 ? 'active' : ''}}" bind:tap="tapChar5">
+      <view class="img-wrap">
+        <image class="hint-img" src="/assets/image/xayah_img.jpg" />
+      </view>
+    </view>
   </view>
+
+
+<view wx:if="{{hint}}"   
+    style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: 100%; height: 100% ;background-color: rgba(0, 0, 0, 0.3); text-align: center;line-height: 24px;">
+    <image mode="aspectFit" style="height: 80%" src="/assets/image/body_hint.png" bind:tap="handleHintTap"/>
+</view>
 
   <view wx:if="{{!loaded}}"   
     style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: {{width}}px; height: {{height}}px;background-color: #ffdede; text-align: center;line-height: 24px;">

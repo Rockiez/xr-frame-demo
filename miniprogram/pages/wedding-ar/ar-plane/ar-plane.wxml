@@ -18,28 +18,60 @@
 
 </xr-viewer>
 
-<view class="xr-control" style="top: {{height - 130}}px;">
+<scroll-view scroll-x="true" class="xr-control" style="top: {{height - 130}}px;">
+
   <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar1">
     <view class="img-wrap">
       <image class="hint-img" src="/assets/image/monkey_img.jpg" />
     </view>
   </view>
+
   <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar2">
     <view class="img-wrap">
       <image class="hint-img" src="/assets/image/lux_img.jpg" />
     </view>
   </view>
+
   <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar3">
     <view class="img-wrap">
       <image class="hint-img" src="/assets/image/aso_img.jpg" />
     </view>
   </view>
-    <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar4">
+
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar4">
     <view class="img-wrap">
       <image class="hint-img" src="/assets/image/robot_img.jpg" />
     </view>
   </view>
-</view>
+
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar5">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/ali_img.jpg" />
+    </view>
+  </view>
+
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar6">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/caitlyn_img.jpg" />
+    </view>
+  </view>
+
+  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar7">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/fortune_img.jpg" />
+    </view>
+
+  <!-- </view>  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar8">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/robot_img.jpg" />
+    </view>
+    
+  </view>  <view class="control-item {{pending ? 'active' : ''}}" bind:tap="tapChar9">
+    <view class="img-wrap">
+      <image class="hint-img" src="/assets/image/robot_img.jpg" />
+    </view>-->
+  </view> 
+</scroll-view>
 
 <view class="cleanButton">
   
@@ -71,6 +103,11 @@
 
 <view class="cleanButton" wx:if="{{!pending && !questionsStart}}" bind:tap="tapClean">
   <image mode="aspectFit" src="/assets/image/clean.png" class="cleanImg"/>
+</view>
+
+<view wx:if="{{hint}}"   
+    style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: 100%; height: 100% ;background-color: rgba(0, 0, 0, 0.3); text-align: center;line-height: 24px;">
+    <image mode="aspectFit" style="height: 80%" src="/assets/image/plane_hint.png" bind:tap="handleHintTap"/>
 </view>
 
 <view wx:if="{{!loaded}}"   

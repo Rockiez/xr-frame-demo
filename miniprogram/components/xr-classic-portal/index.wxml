@@ -10,6 +10,11 @@
     <xr-asset-load type="gltf" asset-id="char3" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/Yasuo.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713418910&Signature=%2BG4XWwjhENaFxY6yxJJHwrOtqmQ%3D" />
     <xr-asset-load type="gltf" asset-id="char4" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/robot.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713601265&Signature=RBIpY2CNW9nMVO4kk8NDrV2m8D0%3D" />
 
+    <xr-asset-load type="gltf" asset-id="char5" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/ali.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713754537&Signature=3GtU6tOK2otbZ0svUAMDJ82t%2BME%3D" />
+    <xr-asset-load type="gltf" asset-id="char6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/caitlyn.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713754560&Signature=BYKNi4iKcQk24kxz7RYxHC0zohI%3D" />
+    <xr-asset-load type="gltf" asset-id="char7" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/fortune.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713754578&Signature=aULm%2B4aoIo3DLXbfADw8ZnpFc74%3D" />
+    <!-- <xr-asset-load type="gltf" asset-id="char8" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/robot.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713601265&Signature=RBIpY2CNW9nMVO4kk8NDrV2m8D0%3D" /> -->
+
   </xr-assets>
 
 
@@ -20,20 +25,36 @@
     </xr-ar-tracker>
 
     <xr-node id="char1" node-id="char1" visible="false">
-      <xr-gltf wx:if="{{char1}}" model="char1" scale="6 6 6" anim-autoplay   position="0 0 0"/>
+      <xr-gltf wx:if="{{char1}}" model="char1" scale="12 12 12" anim-autoplay   position="0 0 0"/>
     </xr-node>
 
     <xr-node id="char2" node-id="char2" visible="false">
-      <xr-gltf wx:if="{{char2}}" model="char2" scale="8 8 8" anim-autoplay  position="0 0 0"/>
+      <xr-gltf wx:if="{{char2}}" model="char2" scale="15 15 15" anim-autoplay  position="0 0 0"/>
     </xr-node>
 
     <xr-node id="char3" node-id="char3" visible="false">
-      <xr-gltf wx:if="{{char3}}" model="char3" scale="8 8 8 " anim-autoplay mesh-shape="autoFit:true" position="0 0 0" bind:touch-shape="handleTouchModel"/>
-      <xr-gltf wx:if="{{char3}}" model="marker" scale="10 10 10 " position="0.15 1.5 0.1"/>
+      <xr-gltf wx:if="{{char3}}" model="char3" scale="9 9 9 " anim-autoplay mesh-shape="autoFit:true" position="0 0 0" bind:touch-shape="handleTouchModel"/>
+      <xr-gltf wx:if="{{char3}}" model="marker" scale="10 10 10 " position="0.15 2 0.1"/>
     </xr-node>
 
     <xr-node id="char4" node-id="char4" visible="false">
-      <xr-gltf wx:if="{{char4}}" model="char4" scale="8 8 8" anim-autoplay  position="0 0 0"/>
+      <xr-gltf wx:if="{{char4}}" model="char4" scale="12 12 12" anim-autoplay  position="0 0 0"/>
+    </xr-node>
+
+    <xr-node id="char5" node-id="char5" visible="false">
+      <xr-gltf wx:if="{{char5}}" model="char5" scale="12 12 12" anim-autoplay  position="0 0 0"/>
+    </xr-node>
+        <xr-node id="char6" node-id="char6" visible="false">
+      <xr-gltf wx:if="{{char6}}" model="char6" scale="16 16 16" anim-autoplay  position="0 0 0"/>
+    </xr-node>
+        <xr-node id="char7" node-id="char7" visible="false">
+      <xr-gltf wx:if="{{char7}}" model="char7" scale="12 12 12" anim-autoplay  position="0 0 0"/>
+    </xr-node>
+        <xr-node id="char8" node-id="char8" visible="false">
+      <xr-gltf wx:if="{{char8}}" model="char8" scale="12 12 12" anim-autoplay  position="0 0 0"/>
+    </xr-node>
+        <xr-node id="char9" node-id="char9" visible="false">
+      <xr-gltf wx:if="{{char9}}" model="char9" scale="12 12 12" anim-autoplay  position="0 0 0"/>
     </xr-node>
   </xr-node>
 

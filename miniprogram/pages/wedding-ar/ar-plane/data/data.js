@@ -1,31 +1,35 @@
 const I1 = {
-  question: '我是一个特别固执的人，任何问题不管有多难，我都会去做到最好！',
+  question: 'Hello, 欢迎参加李雪铭和巫昊南的婚礼。',
 };
 const I2 = {
-  question: '如果你也可以像我一样，那我觉得这件事情泰裤辣！',
+  question: '我这里有一些关于他们爱好的小问题，全部回答正确会有小惊喜哦。',
 };
 const Q1 = {
-  question: '亚索：\n沙漠死神的哪个技能可以叠加攻击值？',
-  options: ['Q','W'],
-  answer: 'Q',
+  question: '亚索：\n 谁先打上的金铲铲大师？',
+  options: ['李雪铭','巫昊南'],
+  answer: '李雪铭',
 };
 const Q2 = {
-  question: '亚索：\n幽梦之灵是谁的武器？',
-  options: ['无双剑姬 ','无极剑圣'],
-  answer: '无极剑圣',
+  question: '亚索：\n 巫昊南英雄联盟是第几个赛季上的钻石?',
+  options: ['S4','S5'],
+  answer: 'S5',
 };
 const Q3 = {
-  question: '亚索：\n影流之镰凯隐的老师是? ',
-  options: ['无极剑圣','影流之主'],
-  answer: '影流之主',
+  question: '亚索：\n 李雪铭在哪个游戏上花钱最多的?',
+  options: ['QQ炫舞','英雄联盟'],
+  answer: 'QQ炫舞',
 };
 const Q4 = {
-  question: '亚索：\n皎月女神的外文名是什么？',
-  options: ['Diana','Tina'],
-  answer: 'Diana',
+  question: '亚索：\n 李雪铭最喜爱的游戏类型？',
+  options: ['即时战略','模拟经营'],
+  answer: '模拟经营',
 };
-
+const Q5 = {
+  question: '亚索：\n 巫昊南游戏生涯的“领路人”？',
+  options: ['马化腾','黄子夏'],
+  answer: '黄子夏',
+};
 const E1 = {
-  question: '恭喜你全部答对了！这泰裤辣！',
+  question: '恭喜你全部答对了！',
 }
-export default [I1, I2, Q1, Q2, Q3, Q4, E1];
+export default [I1, I2, Q1, Q2, Q3, Q4,Q5, E1];

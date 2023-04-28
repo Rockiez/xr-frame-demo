@@ -15,18 +15,29 @@
 .list .listBox {
   height: 120rpx;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-self: center;
   align-items: center;
   padding: 0 32rpx;
   font-size: 32rpx;
   line-height: 48rpx;
   color: #333;
+  
 }
 
 .list .listBox .name {
+  margin-top: 20rpx;
   display: flex;
-  
   justify-content: center;
   width: 100%;
+  font-size: 40rpx;
 }
+.list .listBox .detail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 20rpx;
+  color: gray;
+  font-style: italic;
+}
+

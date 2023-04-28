@@ -7,6 +7,7 @@ Page({
     markerImg: 'https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/marker/2dmarker-test.jpg',
     progressInfo: '',
     loaded: false,
+    hint: true,
   },
   // handleChangeMarkerImg: function() {
   //   wx.chooseMedia({
@@ -30,5 +31,11 @@ Page({
   handleLoaded: function({detail}) {
     console.log('assets loaded at page', detail);
     this.setData({loaded: true});
-  }
+  },
+  handleHintTap(){
+    console.log('handleHintTap');
+    this.setData({
+      hint: false,
+    });
+  },
 });

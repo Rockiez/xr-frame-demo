@@ -2,12 +2,16 @@
   <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
     <xr-asset-load type="gltf" asset-id="char1-helmet" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/tryndamere_helmet.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1712907777&Signature=2fuFOZ9iPoOQPCEDp7UsEyDEP9Q%3D"/>
     <xr-asset-load type="gltf" asset-id="char2-helmet" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/ashe_helmet.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713077051&Signature=D5Hd2wTfqiPJlyOQATyuEwjQBv8%3D"/>
+    <xr-asset-load type="gltf" asset-id="char3-helmet" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/xayah-helmet.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713680804&Signature=vhfW3PeVHwovwiqmWL/NZJ1e4Hs%3D"/>
+    <xr-asset-load type="gltf" asset-id="char4-helmet" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/rakan_helmet.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713680824&Signature=D2pjVcvOl6KrWx1nWT6ZH57Pf8o%3D"/>
 
   </xr-assets>
   <xr-node wx:if="{{arReady}}">
     <xr-ar-tracker mode="Face" auto-sync="-1" >
       <xr-gltf wx:if="{{char1}}" position="0 0.05 0.4" model="char1-helmet" scale="17 17 17"  rotation="0 183 0"/>
       <xr-gltf wx:if="{{char2}}" position="-0.015 0.5 0.4" model="char2-helmet" scale="5000 5000 5000"  rotation="-8 184 -2"/>
+     <xr-gltf wx:if="{{char3}}" position="0 0.1 0.2" model="char3-helmet" scale="5 5 5"  rotation="0 183 0"/>
+      <xr-gltf wx:if="{{char4}}" position="0 0.1 0.2" model="char4-helmet" scale="5.5 5.5 5.5"  rotation="-8 184 -2"/>
     </xr-ar-tracker>
     <xr-camera
       id="camera" node-id="camera" clear-color="0.925 0.925 0.925 1"

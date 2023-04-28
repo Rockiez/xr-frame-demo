@@ -11,6 +11,9 @@ Page({
     char1: true,
     char2: false,
     char3: false,
+    char4: false,
+    char5: false,
+    hint: true,
     markerList: [],
   },
   handleInfo: function({detail}) {
@@ -41,6 +44,16 @@ Page({
         name: 'char3',
       });
     }
+    if (this.data.char4) {
+      markerList.push({
+        name: 'char4',
+      });
+    }
+    if (this.data.char5) {
+      markerList.push({
+        name: 'char5',
+      });
+    }
     this.setData({
       dataReady: true,
       markerList: markerList
@@ -56,6 +69,8 @@ Page({
       char1: true,
       char2: false,
       char3: false,
+      char4: false,      
+      char5: false,
     });
 
     this.refreshData();
@@ -65,6 +80,8 @@ Page({
       char1: false,
       char2: true,
       char3: false,
+      char4: false,      
+      char5: false,
     });
 
     this.refreshData();
@@ -74,8 +91,38 @@ Page({
       char1: false,
       char2: false,
       char3: true,
+      char4: false,      
+      char5: false,
     });
 
     this.refreshData();
+  },
+  tapChar4() {
+    this.setData({
+      char1: false,
+      char2: false,
+      char3: false,
+      char4: true,      
+      char5: false,
+    });
+
+    this.refreshData();
+  },
+  tapChar5() {
+    this.setData({
+      char1: false,
+      char2: false,
+      char3: false,
+      char4: false,      
+      char5: true,
+    });
+
+    this.refreshData();
+  },
+  handleHintTap(){
+    console.log('handleHintTap');
+    this.setData({
+      hint: false,
+    });
   },
 });

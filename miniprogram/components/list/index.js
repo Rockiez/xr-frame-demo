@@ -13,6 +13,10 @@ Component({
             type: String,
             value: '',
         },
+        detail: {
+            type: String,
+            value: '',
+        },
         root: {
             type: String,
             value: '',

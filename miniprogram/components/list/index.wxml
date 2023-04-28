@@ -1,5 +1,6 @@
 <view class="list">
   <view class="listBox" bindtap="tap">
     <view class="name">{{ name }}</view>
+    <view class="detail">{{ detail}}</view>
   </view>
 </view>

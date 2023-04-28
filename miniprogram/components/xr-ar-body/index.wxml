@@ -8,6 +8,12 @@
 
       <xr-asset-load type="gltf" asset-id="lux6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/lux-6.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713486405&Signature=z2x7sWJFF5RKgrNwf5zmcgkO3qY%3D" />
 
+      <xr-asset-load type="gltf" asset-id="rakan6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/rakan_6.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713603489&Signature=0zRws0FAEul1btP/3vPTwg3H750%3D" />
+      <xr-asset-load type="gltf" asset-id="rakan12" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/rakan_12.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713603470&Signature=AEuc8BIgOtDo/t%2BjTY%2BKCZLaXFg%3D" />
+      <xr-asset-load type="gltf" asset-id="xayah6" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/xayah_6.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713603433&Signature=5Dn02OKWd3uNtH9B%2BSDS%2BgfjFMc%3D" />
+      <xr-asset-load type="gltf" asset-id="xayah12" src="https://thh-ar-miniprogram.obs.cn-east-3.myhuaweicloud.com:443/xayah_12.glb?AccessKeyId=5BWMQQ24QVRXZFXDRO86&Expires=1713603454&Signature=VV8b1O7jLb/dmnMoEG0WDgPtk00%3D" />
+
+
 </xr-assets>
   <xr-node wx:if="{{arReady}}">
 
@@ -16,12 +22,15 @@
           <xr-gltf wx:if="{{char1}}" model="garen6" rotation="0 0 0" scale="2.7 2.7 2.7" position="0 -0.085 0"/>
           <xr-gltf wx:if="{{char2}}" model="ezreal6" rotation="0 180 0" scale="1000 1000 1000" position="0.38 0 0"/>
           <xr-gltf wx:if="{{char3}}" model="lux6" rotation="0 180 0" scale="18 18 18" position="0.38 0 0"/>
-
+          <xr-gltf wx:if="{{char4}}" model="rakan6" rotation="0 180 0" scale="1.3 1.3 1.3" position="0.4 0 0"/>
+          <xr-gltf wx:if="{{char5}}" model="xayah6" rotation="0 180 0" scale="1.8 1.8 1.8" position="0.37 -0.05 0"/>
       </xr-node>
 
       <xr-node>
         <xr-gltf wx:if="{{char1}}" model="garen12" rotation="0 0 0" scale="2.5 2.5 2.5" position="-0.05 0 0"/>
-        <xr-gltf wx:if="{{char2}}" model="ezreal12" rotation="0 180 0" scale="1000 1000 1000" position="0.16 0 0"/>
+        <xr-gltf wx:if="{{char2}}" model="ezreal12" rotation="0 180 0" scale="1000 1000 1000" position="0.18 0 0"/>
+        <xr-gltf wx:if="{{char4}}" model="rakan12" rotation="0 180 0" scale="1 1 1" position="0.2 0 0"/>
+        <xr-gltf wx:if="{{char5}}" model="xayah12" rotation="0 180 0" scale="1.6 1.6 1.6" position="0.22 0 0"/>
       </xr-node>
 
     </xr-ar-tracker>

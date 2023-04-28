@@ -20,6 +20,11 @@
 </xr-viewer>
 
 
+<view wx:if="{{hint}}"   
+    style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: 0;width: 100%; height: 100% ;background-color: rgba(0, 0, 0, 0.3); text-align: center;line-height: 24px;">
+    <image mode="aspectFit" style="height: 80%" src="/assets/image/2dMarker_hint.png" bind:tap="handleHintTap"/>
+</view>
+
   <view wx:if="{{!loaded}}"   
     style="position: absolute; display: flex; justify-content: center; align-items: center; left: 0;top: -20;width: {{width}}px; height: {{height}}px;background-color: #ffdede; text-align: center;line-height: 24px;">
     <!-- <text style="color: red;font-size: 18px;">{{progressInfo}}</text> -->

@@ -14,7 +14,13 @@ Page({
     char2: false,
     char3: false,
     char4: false,
+    char5: false,
+    char6: false,
+    char7: false,
+    char8: false,
+    char9: false,
     clean: false,
+    hint: true,
     pending: false,
     awardDialog:false,
     markerList: [],
@@ -45,7 +51,6 @@ Page({
         name: 'char1',
       });
     }
-
     if (this.data.char2) {
       markerList.push({
         name: 'char2',
@@ -61,6 +66,31 @@ Page({
         name: 'char4',
       });
     }
+    if (this.data.char5) {
+      markerList.push({
+        name: 'char5',
+      });
+    }
+    if (this.data.char6) {
+      markerList.push({
+        name: 'char6',
+      });
+    }
+    if (this.data.char7) {
+      markerList.push({
+        name: 'char7',
+      });
+    }
+    if (this.data.char8) {
+      markerList.push({
+        name: 'char8',
+      });
+    }
+    if (this.data.char9) {
+      markerList.push({
+        name: 'char9',
+      });
+    }
     this.setData({
       dataReady: true,
       markerList: markerList
@@ -71,58 +101,76 @@ Page({
     })
   },
 
+  charFilter(callback) {
+    this.setData({
+      char1: false,
+      char2: false,
+      char3: false,
+      char4: false,
+      char5: false,
+      char6: false,
+      char7: false,
+      char8: false,
+      char9: false,
+    })
+    callback();
+    this.refreshData();
+
+  },
+
   tapChar1() {
     if (this.data.pending) {
       return;
     }
-    this.setData({
-      char1: true,
-      char2: false,
-      char3: false,
-      char4: false,
-    });
-
-    this.refreshData();
+    this.charFilter(() => {this.setData({char1: true})});
   },
   tapChar2() {
     if (this.data.pending) {
       return;
     }
-    this.setData({
-      char1: false,
-      char2: true,
-      char3: false,
-      char4: false,
-    
-    });
-
-    this.refreshData();
+    this.charFilter(() => {this.setData({char2: true})});
   },
   tapChar3() {
     if (this.data.pending) {
       return;
     }
-    this.setData({
-      char1: false,
-      char2: false,
-      char3: true,
-      char4: false,
-    });
-
-    this.refreshData();
+    this.charFilter(() => {this.setData({char3: true})});
   },
   tapChar4() {
     if (this.data.pending) {
       return;
     }
-    this.setData({
-      char1: false,
-      char2: false,
-      char3: false,
-      char4: true,
-    });
-
-    this.refreshData();
+    this.charFilter(() => {this.setData({char4: true})});
+  },
+  tapChar5() {
+    if (this.data.pending) {
+      return;
+    }
+    this.charFilter(() => {this.setData({char5: true})});
+  },
+  tapChar6() {
+    if (this.data.pending) {
+      return;
+    }
+    this.charFilter(() => {this.setData({char6: true})});
+  },
+  tapChar7() {
+    if (this.data.pending) {
+      return;
+    }
+    this.charFilter(() => {this.setData({char7: true})});
+  },
+  tapChar8() {
+    if (this.data.pending) {
+      return;
+    }
+    this.charFilter(() => {this.setData({char8: true})});
+  },
+  tapChar9() {
+    if (this.data.pending) {
+      return;
+    }
+    this.charFilter(() => {this.setData({char9: true})});
   },
   tapClean() {
     if (this.data.pending) {
@@ -332,5 +380,10 @@ Page({
       }
     },
 
-
+    handleHintTap(){
+      console.log('handleHintTap');
+      this.setData({
+        hint: false,
+      });
+    },
 });
